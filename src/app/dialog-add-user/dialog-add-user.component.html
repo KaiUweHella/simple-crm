@@ -1,0 +1,12 @@
+<h1 mat-dialog-title>Add User</h1>
+<div mat-dialog-content>
+    <p>Hier Nutzer hinzufügen</p>
+    <mat-form-field appearance="fill">
+        <mat-label>Nutzer</mat-label>
+        <input matInput>
+      </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button [mat-dialog-close]="" cdkFocusInitial>Save</button>
+</div>

@@ -1,0 +1,53 @@
+$color-primary: #c2185b;
+$color-primary-80: rgba(194, 24, 92, 0.8);
+
+.mat-drawer-container {
+  height: 100vh;
+}
+
+.menu-icon {
+  cursor: pointer;
+}
+
+.sidenav {
+  width: 300px;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 56px;
+  border-bottom: 1px solid $color-primary;
+}
+
+mat-toolbar {
+  min-height: 56px;
+  height: 56px;
+}
+
+.menu-items {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+
+  li {
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    height: 48px;
+    cursor: pointer;
+
+    mat-icon{
+        margin-right: .5rem;
+    }
+
+    &:hover {
+      background-color: $color-primary-80;
+    }
+  }
+}
+
+.router-container{
+    padding: 40px;
+}
