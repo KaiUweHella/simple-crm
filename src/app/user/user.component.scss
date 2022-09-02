@@ -1,5 +1,43 @@
-.btn-add{
-    position: absolute;
-    right: 40px;
-    bottom: 40px;
+.btn-add {
+  position: absolute;
+  right: 40px;
+  bottom: 40px;
+}
+
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+
+  tr {
+    border-bottom: .5px solid white;
+    cursor: pointer;
+    &:hover {
+      background-color: #c2185b;
+    }
+
+    &:nth-child(1) {
+      color: #c2185b;
+      cursor: unset;
+
+      th {
+        padding: 0 0.5rem;
+        text-align: start;
+        font-weight: normal;
+        border-bottom: 1px solid rgba(194, 24, 92, 0.8);
+      }
+
+      &:hover {
+        background-color: unset;
+      }
+    }
+
+    &:last-child {
+      border-bottom: 1px solid transparent;
+    }
+  }
+
+  td {
+    padding: 0.5rem;
+    text-align: start;
+  }
 }
