@@ -1,0 +1,25 @@
+.user-detail-header {
+  min-height: 250px;
+  color: white;
+  background-color: #c2185b;
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+
+  img {
+    position: absolute;
+    translate: -50% 50%;
+    bottom: 0;
+    left: 50%;
+    height: 160px;
+    width: 160px;
+    border-radius: 100vmax;
+  }
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+}
