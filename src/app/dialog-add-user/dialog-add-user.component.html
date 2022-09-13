@@ -10,13 +10,20 @@
       </mat-form-field>
       <mat-form-field appearance="outline">
         <mat-label>Last Name</mat-label>
-        <input [disabled]="loading"  [(ngModel)]="user.lastName" matInput>
+        <input [disabled]="loading" [(ngModel)]="user.lastName" matInput>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field class="full-width" appearance="fill" appearance="outline">
+        <mat-label>Enter your email</mat-label>
+        <input [(ngModel)]="user.email" matInput placeholder="pat@example.com" [formControl]="email" required>
+        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
       </mat-form-field>
     </div>
     <div>
       <mat-form-field class="full-width" appearance="outline">
         <mat-label>Birth Date</mat-label>
-        <input [disabled]="loading"  [(ngModel)]="birthDate" matInput [matDatepicker]="picker">
+        <input [disabled]="loading" [(ngModel)]="birthDate" matInput [matDatepicker]="picker">
         <!-- <mat-hint>MM/DD/YYYY</mat-hint> -->
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
@@ -25,22 +32,22 @@
     <div>
       <mat-form-field class="full-width" appearance="outline">
         <mat-label>Street + House No.</mat-label>
-        <input [disabled]="loading"  [(ngModel)]="user.address" matInput>
+        <input [disabled]="loading" [(ngModel)]="user.address" matInput>
       </mat-form-field>
     </div>
     <div>
       <mat-form-field class="margin-right" appearance="outline">
         <mat-label>Zip code</mat-label>
-        <input [disabled]="loading"  [(ngModel)]="user.zipCode" matInput>
+        <input [disabled]="loading" [(ngModel)]="user.zipCode" matInput>
       </mat-form-field>
       <mat-form-field appearance="outline">
         <mat-label>City</mat-label>
-        <input [disabled]="loading"  [(ngModel)]="user.city" matInput>
+        <input [disabled]="loading" [(ngModel)]="user.city" matInput>
       </mat-form-field>
     </div>
   </div>
   <div mat-dialog-actions>
-    <button mat-button (click)="onNoClick()">Cancel</button>
+    <button mat-button [mat-dialog-close]="">Cancel</button>
     <button mat-button [mat-dialog-close]="" (click)="save()" cdkFocusInitial>Save</button>
   </div>
 </div>
