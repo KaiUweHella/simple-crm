@@ -1,7 +1,17 @@
 <mat-card class="user-detail-header">
     <div>
-        <h2>Max Mustermann</h2>
-        <span>kai.hella27@gmail.com</span>
+        <h2>{{ user.firstName }} {{ user.lastName }}</h2>
+        <span>{{ user.email }}</span>
     </div>
     <img src="../../assets/Test.png" alt="">
+</mat-card>
+
+<mat-card class="info-card">
+
+    <mat-card-title>Adresse</mat-card-title>
+
+    <mat-card-content>
+        {{ user.address }} <br>
+        {{ user.zipCode }}
+    </mat-card-content>
 </mat-card>

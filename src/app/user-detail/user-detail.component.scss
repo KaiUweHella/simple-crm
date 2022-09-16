@@ -1,5 +1,6 @@
 .user-detail-header {
   min-height: 250px;
+  z-index: 1001;
   color: white;
   background-color: #c2185b;
   position: relative;
@@ -21,4 +22,8 @@
     font-size: 2rem;
     margin-bottom: 1rem;
   }
+}
+
+.info-card {
+  margin-top: 2rem;
 }
