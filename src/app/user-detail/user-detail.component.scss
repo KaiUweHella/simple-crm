@@ -26,4 +26,11 @@
 
 .info-card {
   margin-top: 2rem;
+  position: relative;
+}
+
+.pin-right-upper-corner {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
 }
