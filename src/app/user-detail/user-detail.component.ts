@@ -19,6 +19,7 @@ import { DialogEditUserComponent } from '../dialog-edit-user/dialog-edit-user.co
 export class UserDetailComponent implements OnInit {
   userID = '';
   user: User = new User();
+  birthDate = '';
 
   constructor(
     public dialog: MatDialog,
@@ -29,7 +30,6 @@ export class UserDetailComponent implements OnInit {
   ngOnInit(): void {
     this.route.paramMap.subscribe(async (pm) => {
       this.userID = pm.get('id');
-      console.log(this.userID);
 
       const coll = collection(this.firestore, 'users');
       this.userID = pm.get('id');
@@ -37,7 +37,6 @@ export class UserDetailComponent implements OnInit {
       const unsub = onSnapshot(docRef, (doc) => {
         const data: any = doc.data();
         this.user = new User(data);
-        this.user.address = data.address;
       });
     });
   }
@@ -46,14 +45,12 @@ export class UserDetailComponent implements OnInit {
 
   editMenu() {
     let dialog = this.dialog.open(DialogEditAddressComponent);
-    console.log(this.user.toJson());
     dialog.componentInstance.user = new User(this.user.toJson());
     dialog.componentInstance.userID = this.userID;
   }
 
   editUserDetail() {
     let dialog = this.dialog.open(DialogEditUserComponent);
-    console.log(this.user.toJson());
     dialog.componentInstance.user = new User(this.user.toJson());
     dialog.componentInstance.userID = this.userID;
   }

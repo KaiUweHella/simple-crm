@@ -16,16 +16,13 @@ export class DialogEditUserComponent implements OnInit {
 
   constructor(private firestore: Firestore) {}
 
-  ngOnInit(): void {
-    console.log(this.user);
-  }
+  ngOnInit(): void {}
 
   async save() {
     this.loading = true;
 
     const coll = collection(this.firestore, 'users');
     const userRef = doc(coll, this.userID);
-    console.log(this.user.address);
     await updateDoc(userRef, this.user.toJson());
     this.loading = false;
   }

@@ -21,7 +21,6 @@ export class DialogEditAddressComponent implements OnInit {
 
     const coll = collection(this.firestore, 'users');
     const userRef = doc(coll, this.userID);
-    console.log(this.user.address);
     await updateDoc(userRef, this.user.toJson());
     this.loading = false;
   }
